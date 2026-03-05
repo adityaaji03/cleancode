@@ -13,21 +13,7 @@ void main() {
 ////////////////////////////////////////////////////////
 /// STATE MODEL (BUSINESS LOGIC)
 ////////////////////////////////////////////////////////
-class CartModel extends ChangeNotifier {
-  final List<String> _items = [];
 
-  List<String> get items => _items;
-
-  void add(String itemName) {
-    _items.add(itemName);
-    notifyListeners(); // WAJIB agar UI update
-  }
-
-  void removeAll() {
-    _items.clear();
-    notifyListeners();
-  }
-}
 
 ////////////////////////////////////////////////////////
 /// UI LAYER
