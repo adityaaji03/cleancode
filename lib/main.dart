@@ -33,30 +33,7 @@ class MyApp extends StatelessWidget {
 ////////////////////////////////////////////////////////
 /// WIDGET TOMBOL TAMBAH
 ////////////////////////////////////////////////////////
-class AddButton extends StatelessWidget {
-  final String item;
 
-  const AddButton({required this.item, super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    // Hanya rebuild jika item ini berubah statusnya
-    final isInCart = context.select<CartModel, bool>(
-      (cart) => cart.items.contains(item),
-    );
-
-    return TextButton(
-      onPressed: isInCart
-          ? null
-          : () {
-              context.read<CartModel>().add(item);
-            },
-      child: isInCart
-          ? const Icon(Icons.check, color: Colors.green)
-          : const Text('TAMBAH'),
-    );
-  }
-}
 
 ////////////////////////////////////////////////////////
 /// HALAMAN KERANJANG
